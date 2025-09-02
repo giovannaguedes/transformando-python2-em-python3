@@ -1,0 +1,8 @@
+#!/usr/bin/python2
+import urllib
+
+site = urllib.urlopen("http://nome do site aqui.com.br/")
+server = site.info()
+
+print "O servidor web esta rodando"
+print server['Server']
