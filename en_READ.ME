@@ -1,0 +1,79 @@
+Converting Python2 Scripts to Python3
+
+Tool that takes a Python2 script and transcribes it to Python3.
+
+⚠️ For educational purposes only • Developed by M!ss s3c
+
+📝 Step-by-step guide: Converting scripts
+
+1. Open the Python2 script
+
+In the terminal, create or open the file:
+
+nano script9.4.py
+
+
+Add the following code:
+
+#!/usr/bin/python2
+import urllib
+
+site = urllib.urlopen("http://example.com/")
+server = site.info()
+
+print "The web server is running"
+print server['Server']
+
+2. Run the conversion tool
+
+In the terminal, run:
+
+2to3 -w script9.4.py
+
+
+-w → converts the script and writes the updated file.
+
+3. Check the created files
+
+In the terminal:
+
+ls script9*
+
+
+You will see:
+
+script9.4.py        script9.4.py.bak
+
+
+script9.4.py.bak → old Python2 version.
+
+script9.4.py → updated Python3 version.
+
+4. View the converted version
+
+Open the updated file:
+
+nano script9.4.py
+
+
+It should look like this:
+
+#!/usr/bin/python3
+
+import urllib.request, urllib.parse, urllib.error
+
+site = urllib.request.urlopen("http://example.com/")
+server = site.info()
+
+print("The web server is running")
+print(server['Server'])
+
+👉 What you learned here
+
+2to3 → tool that automatically converts Python2 scripts to Python3.
+
+.bak → backup of the original Python2 script.
+
+urllib → usage changed from Python2 to Python3 (urllib.request, urllib.parse, urllib.error).
+
+print → now a function in Python3.
